@@ -1,0 +1,10 @@
+{% extends "tasks/layout.html" %}
+
+{% block body %}
+  <a href="{% url 'tasks:index' %}">Cancel</a>
+  <h1>Add a new taks</h1>
+  <form action="{% url 'tasks:add' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit">
+{% endblock %}
